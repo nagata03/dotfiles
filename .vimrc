@@ -102,6 +102,9 @@ set hlsearch
 "ESC連打でハイライト解除
 nmap <Esc><Esc> :nohlsearch<CR><Esc>
 
+"ステータス行にファイル名を表示する
+set statusline=%F
+
 "ステータス行に現在のgitブランチを表示する
 set statusline+=%{fugitive#statusline()}
 
