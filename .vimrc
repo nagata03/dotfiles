@@ -160,8 +160,9 @@ endfunction
 """"""""""""""""""""""""""""""
 augroup filetypeIndent
     autocmd!
-    autocmd BufRead,BufNewFile *.go       setlocal tabstop=4 shiftwidth=4
-    autocmd BufRead,BufNewFile *.rb,*.erb setlocal tabstop=2 shiftwidth=2 expandtab
-    autocmd BufRead,BufNewFile *.py       setlocal tabstop=4 shiftwidth=4 expandtab
+    autocmd BufRead,BufNewFile *.go         setlocal tabstop=4 shiftwidth=4
+    autocmd BufRead,BufNewFile *.rb,*.erb   setlocal tabstop=2 shiftwidth=2 expandtab
+    autocmd BufRead,BufNewFile *.py         setlocal tabstop=4 shiftwidth=4 expandtab
+    autocmd BufRead,BufNewFile *.yml,*.yaml setlocal tabstop=2 shiftwidth=2 expandtab
 augroup END
 """"""""""""""""""""""""""""""
