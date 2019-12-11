@@ -47,6 +47,9 @@ Plug 'mechatroner/rainbow_csv'
 " plantumlのシンタックスハイライト
 Plug 'aklt/plantuml-syntax'
 
+" %による移動の強化
+Plug 'andymass/vim-matchup'
+
 " 余談: neocompleteは合わなかった。ctrl+pで補完するのが便利
 
 
