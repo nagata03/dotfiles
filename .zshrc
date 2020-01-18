@@ -68,7 +68,10 @@ ZSH_THEME="candy"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git zsh-syntax-highlighting)
+plugins=(git zsh-syntax-highlighting zsh-syntax-highlighting)
+
+# zsh-completionsの設定
+autoload -U compinit && compinit -u
 
 source $ZSH/oh-my-zsh.sh
 
