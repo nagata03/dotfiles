@@ -169,5 +169,7 @@ augroup filetypeIndent
     autocmd BufRead,BufNewFile *.rb,*.erb   setlocal tabstop=2 shiftwidth=2 expandtab
     autocmd BufRead,BufNewFile *.py         setlocal tabstop=4 shiftwidth=4 expandtab
     autocmd BufRead,BufNewFile *.yml,*.yaml setlocal tabstop=2 shiftwidth=2 expandtab
+    autocmd BufRead,BufNewFile *.js,*.jsx   setlocal tabstop=2 shiftwidth=2 expandtab
+    autocmd BufRead,BufNewFile *.ts,*.tsx   setlocal tabstop=2 shiftwidth=2 expandtab
 augroup END
 """"""""""""""""""""""""""""""
