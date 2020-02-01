@@ -4,6 +4,9 @@ export PATH=$HOME/bin:/usr/local/bin:$PATH
 # rbenvのパスを通す
 eval "$(rbenv init -)"
 
+# nodeのパスを通す
+export PATH=$HOME/.nodebrew/current/bin:$PATH
+
 # Path to your oh-my-zsh installation.
 export ZSH="/Users/sho_nagata/.oh-my-zsh"
 
