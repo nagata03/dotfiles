@@ -108,6 +108,33 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 ##############################
+# aliasの設定
+##############################
+alias be="bundle exec"
+alias maizo="bundle exec rails server -p 3100"
+alias ss="bundle exec sidekiq -C config/sidekiq.yml" # sidekiq start
+
+# git
+alias ga="git add"
+alias gcm="git commit"
+alias gco="git checkout"
+alias gd="git diff"
+alias gpl="git pull"
+alias gps="git push"
+alias gs="git status"
+
+# npm
+alias ni="npm install"
+alias nu="npm uninstall"
+
+# yarn
+alias ys="yarn start"
+
+# zsh
+alias sz="source ~/dotfiles/.zshrc"
+alias vz="vim ~/dotfiles/.zshrc"
+
+##############################
 # pecoの設定
 ##############################
 function select-history() {
