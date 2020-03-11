@@ -1,14 +1,18 @@
 # If you come from bash you might have to change your $PATH.
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 
-# rbenvのパスを通す
+# rbenv PATH
+if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
 
-# nodeのパスを通す
-export PATH=$HOME/.nodebrew/current/bin:$PATH
+# nodenv PATH
+#export PATH=$HOME/.nodebrew/current/bin:$PATH
+export PATH=$HOME/.nodenv/bin:$PATH
+eval "$(nodenv init -)"
 
 # Path to your oh-my-zsh installation.
-export ZSH="/Users/sho_nagata/.oh-my-zsh"
+export ZSH="$HOME/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -87,6 +91,7 @@ source $ZSH/oh-my-zsh.sh
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
+export LANG=ja_JP.UTF-8
 
 # Preferred editor for local and remote sessions
 # if [[ -n $SSH_CONNECTION ]]; then
@@ -106,6 +111,9 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
+# 日本語ファイル名を表示可能にする
+setopt print_eight_bit
 
 ##############################
 # aliasの設定
@@ -137,16 +145,25 @@ alias vz="vim ~/dotfiles/.zshrc"
 ##############################
 # pecoの設定
 ##############################
-function select-history() {
-    local tac
-    if which tac > /dev/null; then
-        tac="tac"
-    else
-        tac="tail -r"
-    fi
-    BUFFER=$(fc -l -n 1 | eval $tac | peco --query "$LBUFFER")
-    CURSOR=$#BUFFER
-    zle -R -c
+#function peco-history() {
+#    local tac
+#    if which tac > /dev/null; then
+#        tac="tac"
+#    else
+#        tac="tail -r"
+#    fi
+#    BUFFER=$(fc -l -n 1 | eval $tac | peco --query "$LBUFFER")
+#    CURSOR=$#BUFFER
+#    zle -R -c
+#}
+#zle -N peco-history
+#bindkey '^r' peco-history
+
+HISTTIMEFORMAT='%Y.%m.%d %T' # historyに時間を追加
+peco-history() {
+    BUFFER=$(history 1 | sort -k1,1nr | perl -ne 'BEGIN { my @lines = (); } s/^\s*\d+\*?\s*//; $in=$_; if (!(grep {$in eq     $_} @lines)) { push(@lines, $in); print $in; }' | peco --query "$LBUFFER")
+    CURSOR=${#BUFFER}
+    zle reset-prompt
 }
-zle -N select-history
-bindkey '^r' select-history
+zle -N peco-history
+bindkey '^r' peco-history
