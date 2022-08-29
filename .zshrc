@@ -8,8 +8,12 @@ eval "$(rbenv init -)"
 
 # nodenv PATH
 #export PATH=$HOME/.nodebrew/current/bin:$PATH
-export PATH=$HOME/.nodenv/bin:$PATH
 eval "$(nodenv init -)"
+export PATH="$HOME/.nodenv/bin:$PATH"
+
+# yvm コマンドを使えるように
+export YVM_DIR=/usr/local/opt/yvm
+[ -r $YVM_DIR/yvm.sh ] && . $YVM_DIR/yvm.sh
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
@@ -169,3 +173,10 @@ peco-history() {
 }
 zle -N peco-history
 bindkey '^r' peco-history
+export PATH="/usr/local/opt/git/bin:$PATH"
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/sho-nagata/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/sho-nagata/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/sho-nagata/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/sho-nagata/google-cloud-sdk/completion.zsh.inc'; fi
