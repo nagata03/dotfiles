@@ -82,10 +82,19 @@ ZSH_THEME="candy"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git zsh-syntax-highlighting zsh-completions)
+plugins=(git)
+#plugins=(git zsh-syntax-highlighting zsh-completions)
+
+# zsh-syntax-highlightingの設定
+#source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # zsh-completionsの設定
-autoload -U compinit && compinit -u
+#if type brew &>/dev/null; then
+#  FPATH=$(brew --prefix)/share/zsh-completions:$FPATH
+#
+#  autoload -Uz compinit
+#  compinit
+#fi
 
 source $ZSH/oh-my-zsh.sh
 
@@ -122,6 +131,10 @@ setopt print_eight_bit
 ##############################
 # aliasの設定
 ##############################
+alias ls='ls -G'
+alias ll='ls -l'
+alias la='ls -la'
+
 alias be="bundle exec"
 alias maizo="bundle exec rails server -p 3100"
 alias ss="bundle exec sidekiq -C config/sidekiq.yml" # sidekiq start
