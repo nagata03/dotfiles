@@ -85,9 +85,6 @@ ZSH_THEME="candy"
 plugins=(git)
 #plugins=(git zsh-syntax-highlighting zsh-completions)
 
-# zsh-syntax-highlightingの設定
-#source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-
 # zsh-completionsの設定
 #if type brew &>/dev/null; then
 #  FPATH=$(brew --prefix)/share/zsh-completions:$FPATH
@@ -193,3 +190,6 @@ if [ -f '/Users/sho-nagata/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/sho-
 
 # The next line enables shell command completion for gcloud.
 if [ -f '/Users/sho-nagata/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/sho-nagata/google-cloud-sdk/completion.zsh.inc'; fi
+
+# zsh-syntax-highlightingの設定(brew install zsh-syntax-highlighting した前提)
+source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
